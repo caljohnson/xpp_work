@@ -1,0 +1,26 @@
+# 1 species w/ allee effect 
+
+# Declare the parameters
+# make sure the spacing is just like this for xppy!!! 
+p K=1, 
+p r=1,
+p gamma=1
+  
+# Define some dimensionless params
+
+
+# define the right-hand sides
+X' = r*X*(K-(X-gamma)^2)
+
+
+# some initial conditions -- necessary for xppy
+init X=2.0
+
+@ total=20,meth=euler
+@ BELL=0
+
+#some auto options and variables
+@ AUTOVAR=X, AUTOXMIN=-1, AUTOXMAX=2.5, AUTOYMIN=-0.01, AUTOYMAX=2.5, DS=0.1, PARMIN=-1, PARMIN=2.5
+
+# Done!!
+d
